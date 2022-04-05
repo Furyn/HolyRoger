@@ -67,7 +67,7 @@ public class OnChangePosition : MonoBehaviour
                 MyLevel++;
                 Debug.Log("LEVEL : " + MyLevel);
                 Vector3 StartScale = transform.localScale;
-                Vector3 EndScale = new Vector3(LevelUpSize[MyLevel - 1], 1, LevelUpSize[MyLevel - 1]);
+                Vector3 EndScale = new Vector3(LevelUpSize[MyLevel - 1], LevelUpSize[MyLevel - 1], LevelUpSize[MyLevel - 1]);
 
                 float t = 0;
                 while (t < 1)
@@ -155,9 +155,18 @@ public class OnChangePosition : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.position += direction * distance;
-            float z = Mathf.Clamp(transform.position.z, DownBoundary, UpBoundary);
+            /*float z = Mathf.Clamp(transform.position.z, DownBoundary, UpBoundary);*/
+            /*float z = Mathf.Clamp(transform.position.z, boundaryCam.up_left.z, boundaryCam.down_left.z);
+            float x = Mathf.Clamp(transform.position.x, boundaryCam.up_left.x, boundaryCam.up_right.x);*/
 
-            transform.position = new Vector3(transform.position.x, transform.position.y , z);
+            float z = transform.position.z;
+            float x = transform.position.x;
+
+
+            /*Debug.Log(boundaryCam.up_left.x);*/
+
+
+            transform.position = new Vector3(x, transform.position.y , z);
             direction = Vector3.zero;
         }
         
