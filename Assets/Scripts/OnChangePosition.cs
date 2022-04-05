@@ -11,15 +11,20 @@ public class OnChangePosition : MonoBehaviour
     public MeshCollider GeneratedMeshColider;
     public Collider GroundColider;
 
-    public float[] LevelUpSizeMultiple = new float[6];
+    public float[] LevelUpSize = new float[6];
     public float TimeScaleHole = 0.4f;
     public float initialScale = 0.5f;
     public float Speed = 1f;
 
+    [Header("BOUNDARY")]
+    public float UpBoundary = 5f;
+    public float DownBoundary = -5f;
+
     Mesh GenerateMesh;
     Vector3 lastMovePoint = Vector3.zero;
-    int MyLevel = 1;
     Vector3 direction = Vector3.zero;
+    BoundaryCam boundaryCam = null;
+    int MyLevel = 1;
     float distance = 0f;
 
     public void StartMove(BaseEventData myEvent)
@@ -54,18 +59,18 @@ public class OnChangePosition : MonoBehaviour
 
     public IEnumerator ScaleHole(int points)
     {
-        if (points < LevelUpSizeMultiple.Length || MyLevel < LevelUpSizeMultiple.Length)
+        if (points < LevelUpSize.Length || MyLevel < LevelUpSize.Length)
         {
 
-            while (MyLevel < points && MyLevel < LevelUpSizeMultiple.Length)
+            while (MyLevel < points && MyLevel < LevelUpSize.Length)
             {
                 MyLevel++;
                 Debug.Log("LEVEL : " + MyLevel);
                 Vector3 StartScale = transform.localScale;
-                Vector3 EndScale = StartScale * LevelUpSizeMultiple[MyLevel - 1];
+                Vector3 EndScale = new Vector3(LevelUpSize[MyLevel - 1], 1, LevelUpSize[MyLevel - 1]);
 
                 float t = 0;
-                while (t < TimeScaleHole)
+                while (t < 1)
                 {
                     t += Time.deltaTime;
                     transform.localScale = Vector3.Lerp(StartScale, EndScale, t);
@@ -89,7 +94,8 @@ public class OnChangePosition : MonoBehaviour
 
     private void Start()
     {
-        transform.localScale = transform.localScale * LevelUpSizeMultiple[0];
+        transform.localScale = transform.localScale * LevelUpSize[0];
+        boundaryCam = Camera.main.GetComponent<BoundaryCam>();
 
         GameObject[] AllGOs = FindObjectsOfType(typeof(GameObject)) as GameObject[];
         foreach (var go in AllGOs)
@@ -149,7 +155,9 @@ public class OnChangePosition : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.position += direction * distance;
-            transform.position = new Vector3(transform.position.x ,transform.position.y , Mathf.Clamp(transform.position.z,-5,5));
+            float z = Mathf.Clamp(transform.position.z, DownBoundary, UpBoundary);
+
+            transform.position = new Vector3(transform.position.x, transform.position.y , z);
             direction = Vector3.zero;
         }
         
