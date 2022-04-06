@@ -155,7 +155,7 @@ public class OnChangePosition : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.position += direction * distance;
-            float z = Mathf.Clamp(transform.position.z, boundaryCam.down_left.z, boundaryCam.up_left.z);
+            float z = Mathf.Clamp(transform.position.z, DownBoundary, UpBoundary);
 
             Vector3 leftDirection = (boundaryCam.up_left - boundaryCam.down_left).normalized;
             float distanceLeftHole = Vector3.Distance(boundaryCam.up_left, transform.position);
