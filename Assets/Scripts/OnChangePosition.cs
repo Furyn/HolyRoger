@@ -155,22 +155,29 @@ public class OnChangePosition : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.position += direction * distance;
-            /*float z = Mathf.Clamp(transform.position.z, DownBoundary, UpBoundary);*/
-            /*float z = Mathf.Clamp(transform.position.z, boundaryCam.up_left.z, boundaryCam.down_left.z);
-            float x = Mathf.Clamp(transform.position.x, boundaryCam.up_left.x, boundaryCam.up_right.x);*/
+            float z = Mathf.Clamp(transform.position.z, boundaryCam.down_left.z, boundaryCam.up_left.z);
 
-            float z = transform.position.z;
-            float x = transform.position.x;
+            Vector3 leftDirection = (boundaryCam.up_left - boundaryCam.down_left).normalized;
+            float distanceLeftHole = Vector3.Distance(boundaryCam.up_left, transform.position);
+            Vector3 leftPoint = boundaryCam.up_left + leftDirection * -distanceLeftHole;
 
+            Vector3 rightDirection = (boundaryCam.up_right - boundaryCam.down_right).normalized;
+            float distanceRightHole = Vector3.Distance(boundaryCam.up_right, transform.position);
+            Vector3 rightPoint = boundaryCam.up_right + rightDirection * -distanceRightHole;
 
-            /*Debug.Log(boundaryCam.up_left.x);*/
+            Debug.DrawLine(leftPoint, leftPoint + Vector3.up, Color.red);
+            Debug.DrawLine(rightPoint, rightPoint + Vector3.up, Color.red);
 
+            float x = Mathf.Clamp(transform.position.x, leftPoint.x, rightPoint.x);
 
             transform.position = new Vector3(x, transform.position.y , z);
             direction = Vector3.zero;
         }
         
     }
+
+    public static float GetPercentage(float min, float max, float current)
+        => (current - min) / (max - min);
 
     private void Make3DMeshCollider()
     {
