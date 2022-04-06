@@ -10,11 +10,13 @@ public class OnChangePosition : MonoBehaviour
     public PolygonCollider2D ground2DColider;
     public MeshCollider GeneratedMeshColider;
     public Collider GroundColider;
+    public AudioSource source;
 
     public float[] LevelUpSize = new float[6];
     public float TimeScaleHole = 0.4f;
     public float initialScale = 0.5f;
     public float Speed = 1f;
+    public float pitch = 1f;
 
     [Header("BOUNDARY")]
     public float UpBoundary = 5f;
@@ -61,7 +63,8 @@ public class OnChangePosition : MonoBehaviour
     {
         if (points < LevelUpSize.Length || MyLevel < LevelUpSize.Length)
         {
-
+            source.pitch = pitch;
+            AudioManager.Instance.PlaySound(source, "HOLE_GROW");
             while (MyLevel < points && MyLevel < LevelUpSize.Length)
             {
                 MyLevel++;

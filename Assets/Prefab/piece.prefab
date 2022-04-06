@@ -128,3 +128,4 @@ MonoBehaviour:
   Weight: 0
   Objectif: 0
   DontEat: 0
+  notSound: 1

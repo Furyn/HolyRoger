@@ -6,6 +6,8 @@ public class KillObject : MonoBehaviour
 {
     public int Points = 1;
     public OnChangePosition HoleScript;
+    public AudioSource source = null;
+    public float pitch = 1f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,13 @@ public class KillObject : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             Obstacle obs = other.gameObject.GetComponent<Obstacle>();
+            if (obs.notSound == false)
+            {
+                Debug.Log("SOUND");
+                source.pitch = pitch;
+                AudioManager.Instance.PlaySound(source, "HOLE_EAT");
+            }
+            
             if (obs.DontEat)
             {
                 HoleScript.Defeat();
@@ -22,7 +31,14 @@ public class KillObject : MonoBehaviour
             {
                 HoleScript.Win();
             }
-            CalculateProgress(obs);
+            if (obs.Weight > 0)
+            {
+                CalculateProgress(obs);
+            }
+            else
+            {
+                AudioManager.Instance.PlaySound(source, "COIN");
+            }
         }
             
     }

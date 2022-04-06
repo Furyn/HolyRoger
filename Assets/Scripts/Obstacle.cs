@@ -7,4 +7,5 @@ public class Obstacle : MonoBehaviour
     public int Weight = 1;
     public bool Objectif = false;
     public bool DontEat = false;
+    public bool notSound = false;
 }
