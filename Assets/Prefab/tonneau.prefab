@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c5ff7a517c96644afa69731d81c774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weight: 2
+  Weight: 1
   Objectif: 0
   DontEat: 0
   notSound: 0
