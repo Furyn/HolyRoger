@@ -9,6 +9,7 @@ public class KillObject : MonoBehaviour
     public AudioSource source = null;
     public AudioSource sourceCOIN = null;
     public float pitch = 1f;
+    public GameObject panelStart = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,7 @@ public class KillObject : MonoBehaviour
             {
                 source.pitch = pitch;
                 AudioManager.Instance.PlaySound(source, "HOLE_EAT");
+                panelStart.SetActive(false);
             }
             
             if (obs.DontEat)

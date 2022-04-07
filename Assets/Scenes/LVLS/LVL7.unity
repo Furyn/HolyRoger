@@ -1350,6 +1350,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8877536993195652155, guid: 29d8132e1845a7146b10417f1a16caa7, type: 3}
   m_PrefabInstance: {fileID: 799635718}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &799635721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5666462097089140629, guid: 29d8132e1845a7146b10417f1a16caa7, type: 3}
+  m_PrefabInstance: {fileID: 799635718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &822439706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1549,6 +1554,7 @@ MonoBehaviour:
   source: {fileID: 627431012}
   sourceCOIN: {fileID: 944738418}
   pitch: 1
+  panelStart: {fileID: 799635721}
 --- !u!82 &944738418
 AudioSource:
   m_ObjectHideFlags: 0
