@@ -45,15 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllAudioName:
   - HOLE_EAT
-  - HOLE_GROW
   - WIN
   - LOSE
   - BUTTON_PRESSED
   - COIN
   AllAudioClip:
   - {fileID: 8300000, guid: d26c57d38bb8b96409533630e3345d15, type: 3}
-  - {fileID: 8300000, guid: d26c57d38bb8b96409533630e3345d15, type: 3}
-  - {fileID: 8300000, guid: d26c57d38bb8b96409533630e3345d15, type: 3}
-  - {fileID: 8300000, guid: d26c57d38bb8b96409533630e3345d15, type: 3}
-  - {fileID: 8300000, guid: 3a463e8ca461427428919b30c6a41256, type: 3}
+  - {fileID: 8300000, guid: 287c8b975335d6d488a6556911312bf5, type: 3}
+  - {fileID: 8300000, guid: 2eca8f258f10f0145b056ede5e412659, type: 3}
+  - {fileID: 8300000, guid: 3cbbfb0b563160142bfb86b649605165, type: 3}
   - {fileID: 8300000, guid: 5cf16c8d79036c04bb79f47fa2499057, type: 3}

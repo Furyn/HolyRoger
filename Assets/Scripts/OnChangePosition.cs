@@ -63,8 +63,6 @@ public class OnChangePosition : MonoBehaviour
     {
         if (points < LevelUpSize.Length || MyLevel < LevelUpSize.Length)
         {
-            source.pitch = pitch;
-            AudioManager.Instance.PlaySound(source, "HOLE_GROW");
             while (MyLevel < points && MyLevel < LevelUpSize.Length)
             {
                 MyLevel++;

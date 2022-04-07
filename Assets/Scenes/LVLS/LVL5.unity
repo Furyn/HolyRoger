@@ -135,10 +135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2544323290061040496, guid: 1254a464161076b4c9a5c34b0188319e, type: 3}
-      propertyPath: AllAudioClip.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3cbbfb0b563160142bfb86b649605165, type: 3}
     - target: {fileID: 2544323290061040497, guid: 1254a464161076b4c9a5c34b0188319e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -661,10 +657,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5429217907233960329, guid: ccbed42745934dc4eb6f15fd58da7ad1, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 031ed1768d5245048b698bea981f9a89, type: 3}
     - target: {fileID: 7145683021400080194, guid: ccbed42745934dc4eb6f15fd58da7ad1, type: 3}
       propertyPath: UpBoundary
       value: 1.75
