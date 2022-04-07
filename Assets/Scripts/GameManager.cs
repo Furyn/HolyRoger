@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject winPanel = null;
     public GameObject losePanel = null;
     public AudioSource source = null;
+    public AudioSource sourceWinLose = null;
     public float pitch = 1f;
 
     public int NextLevelScene = 0;
@@ -28,14 +29,14 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         source.pitch = pitch;
-        AudioManager.Instance.PlaySound(source, "WIN");
+        AudioManager.Instance.PlaySound(sourceWinLose, "WIN");
         winPanel.SetActive(true);
     }
 
     public void Lose()
     {
         source.pitch = pitch;
-        AudioManager.Instance.PlaySound(source, "LOSE");
+        AudioManager.Instance.PlaySound(sourceWinLose, "LOSE");
         losePanel.SetActive(true);
     }
 

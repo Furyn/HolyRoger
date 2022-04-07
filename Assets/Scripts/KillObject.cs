@@ -25,6 +25,7 @@ public class KillObject : MonoBehaviour
             
             if (obs.DontEat)
             {
+                AudioManager.Instance.PlaySound(sourceCOIN, "PIRATE_DEAD");
                 HoleScript.Defeat();
                 return;
             }else if (obs.Objectif)

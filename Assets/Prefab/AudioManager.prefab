@@ -49,9 +49,11 @@ MonoBehaviour:
   - LOSE
   - BUTTON_PRESSED
   - COIN
+  - PIRATE_DEAD
   AllAudioClip:
   - {fileID: 8300000, guid: d26c57d38bb8b96409533630e3345d15, type: 3}
   - {fileID: 8300000, guid: 287c8b975335d6d488a6556911312bf5, type: 3}
   - {fileID: 8300000, guid: 2eca8f258f10f0145b056ede5e412659, type: 3}
   - {fileID: 8300000, guid: 3cbbfb0b563160142bfb86b649605165, type: 3}
   - {fileID: 8300000, guid: 5cf16c8d79036c04bb79f47fa2499057, type: 3}
+  - {fileID: 8300000, guid: 6da364d71fe43f146bf6f4809218f204, type: 3}
