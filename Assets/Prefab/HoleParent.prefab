@@ -145,8 +145,8 @@ MonoBehaviour:
   initialScale: 0.5
   Speed: 8
   pitch: 1
-  UpBoundary: 5
-  DownBoundary: -5
+  UpBoundary: 2
+  DownBoundary: -6
 --- !u!135 &7145683021400080193
 SphereCollider:
   m_ObjectHideFlags: 0
