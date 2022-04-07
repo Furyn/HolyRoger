@@ -642,18 +642,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
-    - target: {fileID: 4581853274346801481, guid: 749876a4a2901fa4a9aa3b965f761323, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581853274346801481, guid: 749876a4a2901fa4a9aa3b965f761323, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581853274346801481, guid: 749876a4a2901fa4a9aa3b965f761323, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.152
-      objectReference: {fileID: 0}
     - target: {fileID: 4581853274346801487, guid: 749876a4a2901fa4a9aa3b965f761323, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
